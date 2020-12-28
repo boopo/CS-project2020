@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>image/background.jpg</file>
+        <file>image/CopyHS.png</file>
+        <file>image/CutHS.png</file>
+        <file>image/DocumentHS.png</file>
+        <file>image/Edit_RedoHS.png</file>
+        <file>image/Edit_UndoHS.png</file>
+        <file>image/NewDocumentHS.png</file>
+        <file>image/openHS.png</file>
+        <file>image/PasteHS.png</file>
+        <file>image/SaveAllHS.png</file>
+        <file>image/saveHS.png</file>
+    </qresource>
+</RCC>
