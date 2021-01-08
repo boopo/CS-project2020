@@ -26,10 +26,20 @@
      <x>0</x>
      <y>0</y>
      <width>712</width>
-     <height>28</height>
+     <height>27</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <widget class="QMenu" name="menuF">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>文件(&amp;F)</string>
     </property>
@@ -42,6 +52,11 @@
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuE">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>编辑(&amp;E)</string>
     </property>
@@ -50,8 +65,15 @@
     <addaction name="actionCut"/>
     <addaction name="actionCopy"/>
     <addaction name="actionPaste"/>
+    <addaction name="action_4"/>
+    <addaction name="action28"/>
    </widget>
    <widget class="QMenu" name="menuW">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>窗口(&amp;W)</string>
     </property>
@@ -62,20 +84,93 @@
     <addaction name="separator"/>
     <addaction name="actionNext"/>
     <addaction name="actionPrevious"/>
+    <addaction name="actionchangkou"/>
    </widget>
    <widget class="QMenu" name="menuH">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>帮助(&amp;H)</string>
     </property>
-    <addaction name="actionAbout"/>
+    <widget class="QMenu" name="menu_A">
+     <property name="title">
+      <string>关于(&amp;A)</string>
+     </property>
+     <addaction name="actionBig_Data"/>
+     <addaction name="separator"/>
+     <addaction name="action_2"/>
+     <addaction name="action_3"/>
+     <addaction name="actionHome_https_lvyingzhao_cn"/>
+    </widget>
+    <addaction name="menu_A"/>
     <addaction name="actionAboutQt"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>背景底色(B)</string>
+    </property>
+    <addaction name="actionRedd"/>
+    <addaction name="actionYeloww"/>
+    <addaction name="actionGreenn"/>
+    <addaction name="actionBluee"/>
+    <addaction name="actionBlueee"/>
+    <addaction name="actionGreen"/>
+    <addaction name="actionYellowww"/>
+    <addaction name="actionmagenta"/>
+    <addaction name="actionlightGray"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>字体设置(Z)</string>
+    </property>
+    <addaction name="action_5"/>
+    <addaction name="action_6"/>
+    <addaction name="action_7"/>
+    <addaction name="action_8"/>
+    <addaction name="action_9"/>
+    <addaction name="action_10"/>
+    <addaction name="action_11"/>
+    <addaction name="action_12"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>字号(M)</string>
+    </property>
+    <addaction name="action1"/>
+    <addaction name="action10"/>
+    <addaction name="action20"/>
+    <addaction name="action30"/>
+    <addaction name="action40"/>
+    <addaction name="action25"/>
+    <addaction name="action26"/>
+    <addaction name="action27"/>
+    <addaction name="action28_2"/>
+    <addaction name="action29"/>
+    <addaction name="action30_2"/>
+    <addaction name="action31"/>
+    <addaction name="action32"/>
+    <addaction name="action33"/>
+    <addaction name="action34"/>
+    <addaction name="action35"/>
+    <addaction name="action36"/>
    </widget>
    <addaction name="menuF"/>
    <addaction name="menuE"/>
    <addaction name="menuW"/>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
    <addaction name="menuH"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -93,6 +188,17 @@
    <addaction name="actionCut"/>
    <addaction name="actionCopy"/>
    <addaction name="actionPaste"/>
+   <addaction name="action_L"/>
+   <addaction name="actionLetIn"/>
+   <addaction name="actionSA"/>
+   <addaction name="actionLL"/>
+   <addaction name="actionshx"/>
+   <addaction name="actionbold"/>
+   <addaction name="actionitalic"/>
+   <addaction name="actiongreen"/>
+   <addaction name="actionred"/>
+   <addaction name="actiongrey"/>
+   <addaction name="actionblue"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
@@ -103,6 +209,13 @@
    <property name="text">
     <string>新建文件(&amp;N)</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
   </action>
   <action name="actionOpen">
    <property name="icon">
@@ -111,6 +224,11 @@
    </property>
    <property name="text">
     <string>打开文件(&amp;O)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionSave">
@@ -121,6 +239,11 @@
    <property name="text">
     <string>保存(&amp;S)</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionSaveAs">
    <property name="icon">
@@ -129,6 +252,11 @@
    </property>
    <property name="text">
     <string>另存为(&amp;A)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionExit">
@@ -144,6 +272,11 @@
    <property name="text">
     <string>撤销(&amp;U)</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionRedo">
    <property name="icon">
@@ -152,6 +285,11 @@
    </property>
    <property name="text">
     <string>恢复(&amp;R)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionCut">
@@ -162,6 +300,11 @@
    <property name="text">
     <string>剪切(&amp;T)</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionCopy">
    <property name="icon">
@@ -170,6 +313,11 @@
    </property>
    <property name="text">
     <string>复制(&amp;C)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionPaste">
@@ -180,45 +328,621 @@
    <property name="text">
     <string>粘贴(&amp;P)</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionClose">
    <property name="text">
     <string>关闭(&amp;O)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionCloseAll">
    <property name="text">
     <string>关闭所有窗口(&amp;A)</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionTile">
    <property name="text">
     <string>平铺(&amp;T)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionCascade">
    <property name="text">
     <string>层叠(&amp;C)</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionNext">
    <property name="text">
     <string>下一个(&amp;X)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionPrevious">
    <property name="text">
     <string>前一个(&amp;V)</string>
    </property>
-  </action>
-  <action name="actionAbout">
-   <property name="text">
-    <string>关于(&amp;A)</string>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionAboutQt">
    <property name="text">
     <string>关于Qt(&amp;Q)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionLL">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/lluu.png</normaloff>image/lluu.png</iconset>
+   </property>
+   <property name="text">
+    <string>下划线(I)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_L">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/clear.png</normaloff>image/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>清空(L)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionSA">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/selectAll.png</normaloff>image/selectAll.png</iconset>
+   </property>
+   <property name="text">
+    <string>全选</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionLetIn">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/letIn.png</normaloff>image/letIn.png</iconset>
+   </property>
+   <property name="text">
+    <string>插入</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionBig_Data">
+   <property name="text">
+    <string>08193109
+</string>
+   </property>
+  </action>
+  <action name="actionbold">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/bold.png</normaloff>image/bold.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bold</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionitalic">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/italic.png</normaloff>image/italic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Italic</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionRedd">
+   <property name="text">
+    <string>红</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionYeloww">
+   <property name="text">
+    <string>黄</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionGreenn">
+   <property name="text">
+    <string>绿</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionBluee">
+   <property name="text">
+    <string>蓝</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionBlueee">
+   <property name="text">
+    <string>黑蓝</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionGreen">
+   <property name="text">
+    <string>黑绿</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionYellowww">
+   <property name="text">
+    <string>黑黄</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionmagenta">
+   <property name="text">
+    <string>magenta</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionlightGray">
+   <property name="text">
+    <string>lightGray</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>       吕迎朝
+  </string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>github:boopo</string>
+   </property>
+  </action>
+  <action name="actionblue">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/blue.png</normaloff>image/blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>blue</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actiongreen">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/green.png</normaloff>image/green.png</iconset>
+   </property>
+   <property name="text">
+    <string>green</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionred">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/red.png</normaloff>image/red.png</iconset>
+   </property>
+   <property name="text">
+    <string>red</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actiongrey">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/grey.png</normaloff>image/grey.png</iconset>
+   </property>
+   <property name="text">
+    <string>grey</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>宋</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action28">
+   <property name="text">
+    <string>hgfhfhj</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>宋体</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>微软雅黑</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string>Angsana New</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="text">
+    <string>Cordia New</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>幼圆</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_10">
+   <property name="text">
+    <string>楷体</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_11">
+   <property name="text">
+    <string>隶书</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_12">
+   <property name="text">
+    <string>仿宋</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action1">
+   <property name="text">
+    <string>20</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action10">
+   <property name="text">
+    <string>21</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action20">
+   <property name="text">
+    <string>22</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action30">
+   <property name="text">
+    <string>23</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action40">
+   <property name="text">
+    <string>24</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action25">
+   <property name="text">
+    <string>25</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action26">
+   <property name="text">
+    <string>26</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action27">
+   <property name="text">
+    <string>27</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action28_2">
+   <property name="text">
+    <string>28</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action29">
+   <property name="text">
+    <string>29</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action30_2">
+   <property name="text">
+    <string>30</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action31">
+   <property name="text">
+    <string>31</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action32">
+   <property name="text">
+    <string>32</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action33">
+   <property name="text">
+    <string>33</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action34">
+   <property name="text">
+    <string>34</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action35">
+   <property name="text">
+    <string>35</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action36">
+   <property name="text">
+    <string>36</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionshx">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/delete.png</normaloff>image/delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>shx</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionHome_https_lvyingzhao_cn">
+   <property name="text">
+    <string>Home :https://lvyingzhao.cn</string>
+   </property>
+  </action>
+  <action name="actionchangkou">
+   <property name="text">
+    <string>changkou</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </action>
  </widget>

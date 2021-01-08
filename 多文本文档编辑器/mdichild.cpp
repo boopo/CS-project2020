@@ -150,6 +150,7 @@ void MdiChild::contextMenuEvent(QContextMenuEvent *e)
     QAction *copy = menu->addAction(trUtf8("复制(&C)"),this,SLOT(copy()),QKeySequence::Copy);
     copy->setEnabled(textCursor().hasSelection());
     menu->addAction(trUtf8("粘贴(&P)"),this,SLOT(paste()),QKeySequence::Paste);
+
     QAction *clear = menu->addAction(trUtf8("清空"),this,SLOT(clear()));
     clear->setEnabled(!document()->isEmpty());
     menu->addSeparator();

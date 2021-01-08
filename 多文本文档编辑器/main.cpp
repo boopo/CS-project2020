@@ -9,10 +9,7 @@ int main(int argc, char *argv[])
     MainWindow w;
 
     QTextCodec *codec = QTextCodec::codecForName("System");
-    //获取系统编码
     QTextCodec::setCodecForLocale(codec);
-    QTextCodec::setCodecForCStrings(codec);
-    QTextCodec::setCodecForTr(codec);
 
     QFont font;
     font.setPointSize(20);
