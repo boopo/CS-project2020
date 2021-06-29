@@ -1,6 +1,11 @@
 import tkinter
+from fractions import Fraction
 from tkinter import *
 import tkinter.font as tkfont
+
+'''
+@Author Boopo 
+'''
 
 
 class Calculator(object):
@@ -12,26 +17,27 @@ class Calculator(object):
         self.tk.maxsize(400, 400)
         self.inputlist = []
         self.midstr = ''
-        self.ButtonList = ['清空', '/', '*', '退格', 7, 8, 9, '-', 4, 5, 6, '+', 1, 2, 3, 0, '.', '=', '1/x', '%', 'sqrt']
-        # 增加菜单
+        self.ButtonList = ['清空', '/', '*', '退格', 7, 8, 9, '-', 4, 5, 6, '+', 1, 2, 3, 0, '.', '=', '1/x', '%', 'sqrt',
+                           '(', ')']
+
         self.menuBar = Menu(self.tk)
         self.tk.config(menu=self.menuBar)
-        # 设置菜单选项
+
         aboutMenu = Menu(self.menuBar, tearoff=0)
         moreMenu = Menu(self.menuBar, tearoff=0)
         self.menuBar.add_cascade(label='贷款计算', command=startDaikuan)
         self.menuBar.add_cascade(label='保险金计算', command=startBaoxian)
         self.menuBar.add_cascade(label='利息计算', command=startRate)
-        # 字体设置
+
         self.EntryFont = tkfont.Font(self.tk, size=13)
         self.ButtonFont = tkfont.Font(self.tk, size=12)
-        # 面板显示
+
         self.count = tkinter.StringVar()
         self.count.set('0')
         self.label = tkinter.Label(self.tk, bg='#FFFFFF', bd='3', fg='black', anchor='center', font=self.EntryFont,
                                    textvariable=self.count)
         self.label.place(y=10, width=380, height=40)
-        # 按钮设置
+
         self.NumButton = tkinter.Button(master=self.tk, relief=GROOVE, bg='#FF3300', text=self.ButtonList[0],
                                         font=self.ButtonFont, command=self.clear)
         self.NumButton.place(x=30, y=80, width=70, height=55)
@@ -80,12 +86,23 @@ class Calculator(object):
         self.NumButton = tkinter.Button(master=self.tk, relief=GROOVE, bg='#FFFFFF', text=self.ButtonList[15],
                                         font=self.ButtonFont, command=lambda: self.knobDown(self.ButtonList[15]))
         self.NumButton.place(x=30, y=320, width=150, height=55)
+
         self.NumButton = tkinter.Button(master=self.tk, relief=GROOVE, bg='#FFFFFF', text=self.ButtonList[16],
                                         font=self.ButtonFont, command=lambda: self.knobDown(self.ButtonList[16]))
-        self.NumButton.place(x=190, y=320, width=70, height=55)
+        self.NumButton.place(x=190, y=320, width=70, height=55)  # 。
+
+        self.NumButton = tkinter.Button(master=self.tk, relief=GROOVE, bg='#FFFFFF', text=self.ButtonList[21],
+                                        font=self.ButtonFont, command=lambda: self.knobDown(self.ButtonList[21]))
+        self.NumButton.place(x=270, y=320, width=70, height=55)  # (
+
+        self.NumButton = tkinter.Button(master=self.tk, relief=GROOVE, bg='#FFFFFF', text=self.ButtonList[22],
+                                        font=self.ButtonFont, command=lambda: self.knobDown(self.ButtonList[22]))
+        self.NumButton.place(x=270, y=380, width=70, height=55)  # )
+
         self.NumButton = tkinter.Button(master=self.tk, relief=GROOVE, bg='#FFFFFF', text=self.ButtonList[17],
                                         font=self.ButtonFont, command=lambda: self.knobDown(self.ButtonList[17]))
-        self.NumButton.place(x=270, y=260, width=70, height=175)
+        self.NumButton.place(x=270, y=260, width=70, height=55)  # =
+
         self.NumButton = tkinter.Button(master=self.tk, relief=GROOVE, bg='#FFFFFF', text=self.ButtonList[18],
                                         font=self.ButtonFont, command=lambda: self.knobDown(self.ButtonList[18]))
         self.NumButton.place(x=30, y=380, width=70, height=55)
@@ -96,7 +113,6 @@ class Calculator(object):
                                         font=self.ButtonFont, command=lambda: self.knobDown(self.ButtonList[20]))
         self.NumButton.place(x=190, y=380, width=70, height=55)
 
-    # 清0
     def clear(self):
         self.inputlist = []
         self.midstr = ''
@@ -202,6 +218,12 @@ class Calculator(object):
                     else:
                         self.midstr = self.midstr + self.inputlist[length]
                 self.inputCheck(self.midstr)
+                print("中缀表达式为"+self.midstr)
+                text = list(self.midstr)
+                b = transfer(text)
+                print("转换为后缀表达式" + "".join(b))
+                c = get_post_express(b)
+                print("结果为" + str(c))
                 self.count.set(self.midstr + '=' + str(round(eval(self.midstr), 5)))
                 self.inputlist = []
                 self.midstr = ''
@@ -471,6 +493,65 @@ def startDaikuan():
 def startRate():
     NewRate = Rate()
     NewRate.start()
+
+
+def transfer(list):
+    priority = {'*': 3, '/': 3, '+': 2, '-': 2, '(': 1}
+    post_list = []
+    op_stack = []
+
+    for i in list:
+        if i in "+-*/":
+            while op_stack and priority[op_stack[-1]] >= priority[i]:
+                post_list.append(op_stack.pop())
+            op_stack.append(i)
+        elif i == "(":
+            op_stack.append(i)
+        elif i == ")":
+            flag = op_stack.pop()
+            while flag != "(":
+                post_list.append(flag)
+                flag = op_stack.pop()
+        else:
+            post_list.append(i)
+    while op_stack:
+        post_list.append(op_stack.pop())
+
+    return post_list
+
+
+def get_post_express(list):
+    op_stack = []
+
+    # 计算后缀表达式
+    for i in list:
+        if i in "+-*/":
+            operand2 = op_stack.pop()
+            operand1 = op_stack.pop()
+            try:
+                result = doMath(i, operand1, operand2)
+                op_stack.append(result)
+            except:
+                return 'NAN'
+        else:
+            try:
+                i = int(i)
+            except:
+                i = Fraction(i)
+            op_stack.append(i)
+
+    return op_stack.pop()
+
+
+def doMath(op: str, number1, number2):
+    if op == '+':
+        return number1 + number2
+    elif op == '-':
+        return number1 - number2
+    elif op == '*':
+        return number1 * number2
+    else:
+        return Fraction(number1, number2)
 
 
 if __name__ == '__main__':

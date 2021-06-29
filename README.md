@@ -2,13 +2,26 @@
 
 CUMT计算机程序设计实践
 
-整合飞爷的计算器python代码，实现拓展功能
+计算器 （Python+Thinker）
 
-整合某人的C++ Qt的文本编辑器，实现拓展功能
+- 支持括号 优先级
+- 中缀转后缀输出
+- 贷款等功能
 
-实现前端安卓App(Flutter)+后端python(Flask)的云学生通讯录，接入矿小助第三方登录接口
+文本编辑器(C++ QT)
 
-拼图游戏 Flutter+Flask+Mysql
+- 一些功能
+
+学生通讯录(Flutter+Flask+TD-SQL)，
+
+- 接入矿小助第三方登录接口(使用JWT鉴权)
+- 前后端分离
+- 使用腾讯云数据库TD-SQL
+- Flask+Sqlalchemy + FlaskRestful
+
+拼图游戏 (Flutter+Flask+Mysql)
+
+- 实现排行榜(简单CRUD)
 
 如果有用的话，点个Star再走
 
